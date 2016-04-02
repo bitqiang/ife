@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .wrapper {
+        width: 960px; /*页面总宽度*/
+        margin: 0 auto; /*水平居中*/
+        text-align: left; /*重置文本对齐方式*/
+    }
+
+    .header {
+        margin-bottom: 5px; /*顶部与主内容垂直间距，可自行修改*/
+    }
+
+    .sidebar {
+        width: 220px; /*左边栏宽度，可自行修改*/
+        display: inline; /*防止IE6双边距*/
+        margin-left: 20px; /*边栏间距，可自行修改*/
+        float: right;
+        margin-bottom: 5px; /*边栏与footer之间的垂直间距，可自行修改*/
+    }
+
+    .main-content {
+        width: 720px; /*主内容宽度*/
+        display: inline; /*防止IE6又边距*/
+        float: left;
+        margin-bottom: 5px; /*主内容与footer之间的垂直间距，可自行修改*/
+    }
+
+    .footer {
+        clear: both; /*清除浮动，非常重要，不可缺少*/
+    }
+</style>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <h1>Header content</h1>
+    </div>
+    <div class="main-content">
+        <h2>Main Content</h2>
+    </div>
+    <div class="aside sidebar">
+        <h2>Sidebar Content</h2>
+    </div>
+    <div class="footer">
+        <h2>Footer Content</h2>
+    </div>
+</div>
+</body>
+</html>

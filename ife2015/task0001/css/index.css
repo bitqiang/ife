@@ -1,0 +1,199 @@
+* {
+	font-family: "Microsoft YaHei UI", sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+	text-align: center;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+
+nav {
+	min-width: 980px;
+	height: 80px;
+	background-color: #522a5c;
+	position: relative;
+}
+
+/* 导航980px 居左放置 */
+.nav-wrap {
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+#logo {
+	position: absolute;
+	float: left;
+	padding-top: 33px;
+}
+
+
+nav ul {
+	position: absolute;
+	float: right;
+	bottom: -30px;
+	right: 0px;
+	position: relative;
+	padding-top: 18px;
+}
+
+nav  li {
+	float: right;
+	margin-left: 28px;
+}
+
+#github {
+	position: absolute;
+	/*margin-left: 1864px;*/
+	bottom: 0px;
+	right: 5px;
+}
+
+.photo {
+	padding-top: 0px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+section{
+	position: relative;
+}
+article{
+	position: absolute;
+	width: 300px;
+	height: 250px;
+	bottom: 0px;
+	right: 480px;;
+}
+article {
+
+	background: -webkit-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* Firefox 3.6 - 15 */
+	background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* 标准的语法（必须放在最后） */
+}
+.photomun{
+	width: auto;
+	height: auto;
+	background-color: #eeeeee;
+}
+.photodiv{
+	width: 980px;
+	height: 570px;
+	margin: 0 auto;
+
+}
+.kuai{
+	width:310px;
+	height: 544px;
+	background-color: white;
+	float: left;
+	margin-left: 10px;
+}
+.kuai img{
+	width: 300px;
+	height: 180px;
+	margin-left: 5px;
+	margin-top: 8px;
+}
+.kuai p{
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+.introduce{
+	position: relative;
+	height: 500px;
+	margin-left: 454px;
+}
+.headPortrait{
+	position: absolute;
+	width: 980px;
+	text-align: center;
+}
+.touxiang{
+	position:relative;
+	width:200px;
+	height:200px;
+	overflow:hidden;
+	border-radius:50%;
+}
+.touxiang img{
+	width: 100%;
+	height: auto;
+}
+.headPortrait img{
+	margin-top: -26px;
+}
+.headPortrait h1{
+	margin-top: 40px;
+}
+.headPortrait p{
+	width: 600px;
+	margin-left: 207px;
+	margin-top: 83px;
+	height: 108px;
+}
+.foot ul{
+	width: 240px;
+	margin: 0 auto;
+}
+.foot li{
+	float: right;
+	margin-left: 28px;
+}
+
+
+
+
+
+/*.content{*/
+	/*position: relative;*/
+/*}*/
+/*.content ul{*/
+	/*width: 980px;*/
+	/*width: 0 auto;*/
+/*}*/
+/*.content li{*/
+	/*float:left;*/
+	/*margin-left: 25px;*/
+
+/*}*/
+
+
+
+
+/*!**/
+/*section{*/
+	/*position: relative;*/
+	/*width: auto;*/
+	/*margin: 0 auto  ;*/
+/*}*/
+/*section img{*/
+	/*position: absolute;*/
+	/*text-align: center;*/
+
+/*}*/
+/*section article{*/
+	/*position: absolute;*/
+	/*width: 300px;*/
+	/*height: 300px;*/
+/*}*/
+/*article h1{*/
+	/*float: right;*/
+/*}*/
+/*article p{*/
+	/*position: absolute;*/
+	/*margin-top: 80px;*/
+/*}*!*/

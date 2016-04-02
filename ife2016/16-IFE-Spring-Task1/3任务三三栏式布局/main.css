@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+body{
+    background-color: #eee;
+}
+
+.logo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:200px;
+    background-color: white;
+    margin: 20px 0 0 20px;
+    border: 1px solid #999;
+}
+.logo img{
+    border:1px solid #999;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 20px 0 0 20px;
+    margin-bottom: 20px;
+}
+.logo h4{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.section{
+    margin:20px 160px 0px 240px;
+    background-color: white;
+    border: 1px solid #999;
+    padding: 20px 20px 20px 20px;
+}
+
+.personal{
+    position: absolute;
+    top:20px;
+    right: 20px;
+    width: 120px;
+    background-color: white;
+    border: 1px solid #999;
+    padding-bottom: 20px;
+}
+.personal img{
+    border:1px solid #999;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 20px 0 0 20px;
+}
+.last{
+    margin-bottom: 20px;
+}

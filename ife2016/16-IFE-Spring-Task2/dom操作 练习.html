@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="newtext">
+
+</ul>
+<script>
+    var TextNode = document.createTextNode(123);
+    var NewLI = document.createElement("li");
+    var NewText = document.getElementById("newtext");
+    NewText.appendChild(NewLI);
+    NewLI.appendChild(TextNode);
+</script>
+</body>
+</html>
