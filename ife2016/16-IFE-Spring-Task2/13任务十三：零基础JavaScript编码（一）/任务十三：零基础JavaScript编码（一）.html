@@ -13,37 +13,39 @@
 
 <script type="text/javascript">
 
-    /* --------------------------------------------------*/
-   /* 方法一*/
+/*
+    方法一
+*/
 
-        document.getElementById("button").onclick = function(){
-        var MyInput = document.getElementById("aqi-input").value;
-            console.log(MyInput);
-        var Myspan = document.getElementById("aqi-display");
-        Myspan.innerHTML=MyInput;
 
+    var MyInput = document.getElementById("aqi-input").value;
+    console.log(MyInput);
+    var Myspan = document.getElementById("aqi-display");
+    Myspan.innerHTML=MyInput;
     }
-    /*----------------------------------------------------*/
+
+
 
 
     /*----------------------------------------------------*/
     /* 方法二*/
+    /* 在注释下方写下代码
+     给按钮button绑定一个点击事件
+     在事件处理函数中
+     获取aqi-input输入的值，并显示在aqi-display中*/
 
-/*
-    (function() {
-        /!*
-         在注释下方写下代码
-         给按钮button绑定一个点击事件
-         在事件处理函数中
-         获取aqi-input输入的值，并显示在aqi-display中
-         *!/
-        var MyInput = document.getElementById("aqi-input").value;
+/*    (function () {
+        var MyInput = document.getElementById("aqi-input");
         var MyButton = document.getElementById("button");
         var Myspan = document.getElementById("aqi-display");
-        Myspan.innerHTML=MyInput;
-        MyButton.onclick = function();
+        MyButton.onclick=function () {
+            Myspan.innerHTML= MyInput.value;
+        }
+
     })();
-*/
+    */
+
+
 
 
     /*----------------------------------------------------*/
