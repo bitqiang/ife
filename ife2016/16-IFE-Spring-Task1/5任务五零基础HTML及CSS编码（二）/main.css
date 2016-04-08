@@ -1,56 +1,145 @@
-/*
-*{
-    margin: 0;
-    padding: 0;
+.left-bar{
+    width: calc(100% - 600px);
+    float: left;
+    padding: 30px;
+}
+.right-bar{
+    width: 540px;
+    float: right;
+    margin-top: 30px;
 }
 body{
-    background-color: #eee;
+    background-color: #cfcfcf;
 }
-nav{
+.head{
+    background-color: #000000;
+    height: 100px;
+    margin-top: -16px;
+}
+.head .logo{
+    float: left;
+    padding-top: 38px;
+    margin-left: 30px;
+
+}
+.head ul{
+    padding-top: 38px;
+}
+.head li{
+    float: right;
+    list-style-type: none;
+    padding-left: 50px;
+    margin-right: 20px;
+}
+.head a{
+    color: white;
+}
+
+.backcolor{
+    background-color: white;
+    margin: 30px;
+    padding: 20px;
+}
+.one img{
+    width: 300px;
+    height: 300px;
+}
+.two li{
+    list-style-type: none;
+}
+.all-photo{
+    overflow: hidden;
+
+}
+.photo{
+    border: 1px solid rgba(173, 173, 173, 0.74);
+    width: 190px;
+    text-align: center;
+    margin-left: 80px;
+    margin-top: 30px;
+    float: left;
+}
+.photo img{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+
+.table{
+    clear: both;
+}
+th{
+    text-align: left;
+}
+table{
     width: 100%;
-    height: 70px;
+    height: 300px;
+
+}
+.color-black{
     background-color: black;
 }
-section{
-    position: relative;
+.color-black th{
+    color: white;
 }
-section .login{
-    float: right;
-    width: 480px;
-    background-color: white;
-    border: 1px solid #999;
-    height: 600px;
-    margin: 20px 20px 0 0 ;
+.color-gray{
+    background-color: #adadad;
 }
-section .content{
-    margin-right: 250px;
-    border: 1px solid #999;
-    background-color: #00ab95;
-    width: 100px;
-    height: 100px;
-}*/
-section .login{
-    float: right;
-    width: 200px;
-    background-color: yellow;
-    height: 100px;
+.side h2 {
+    border-left: solid 3px #adadad;
+    padding-left: 10px;
 }
-section .conteng{
-    margin-right: 210px;
-    background-color: brown;
-    height: 100px;
-    width: 100px;
+.form{
+    margin-top: 10px;
+}
+.margin-top-ten{
+    margin-top: 10px;
+}
+.email{
+    margin-left: 20px;
+}
+.side p{
+    margin-left: 149px;
+}
+.span1{
+    margin-left: 50px;
+}
+.span2{
+    margin-left: 18px;
+}
+input{
+    margin-top: 15px;
+}
+.gender{
+    margin-left: 98px;
+}
+.city{
+    margin-left: 98px;
+}
+.like{
+    margin-left: 98px;
+}
+.input span{
+    margin-left: 65px;
+}
+.input button{
+    width: 100%;
+    height: 40px;
+    background-color: #113cab;
+    border-radius: 30px;
+    color: white;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
+.copy{
+    clear: both;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    height: 80px;
+    background-color: black;
+    color: white;
+    padding-top: 25px;
+}
