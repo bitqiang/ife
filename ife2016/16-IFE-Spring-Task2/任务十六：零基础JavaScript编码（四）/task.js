@@ -9,7 +9,7 @@
  *    "上海": 40
  * };
  */
-    var aqi = [];
+    var aqi = {};
 
 
 
@@ -22,9 +22,11 @@ function addAqiData() {
     var data;
     var aqiCity = document.getElementById('aqi-city-input');
     var aqiValue = document.getElementById('aqi-value-input');
-    //city
-    key = aqiCity.value.trim();
-    //zhishu
+
+    //城市
+    key = aqiCity.value.trim();   //trim 去除空的字符串
+
+    //指数
     data = aqiValue.value.trim();
     var valueRegular =/[^0-9]/;
     var cityRegular =/[^\u4e00-\u9fa5a-zA-Z]/;
@@ -53,13 +55,9 @@ function addAqiData() {
         flag = false;
     }
     if(flag){
-        //aqi['zhishu'] = data;
-        //aqi['city'] = key;
-        aqi['0'] = {
-            'zhishu':data,
-            'city':key
-        };
-
+        //  key是城市， data是指数。
+        aqi[key] = data ;
+        console.log(aqi);
     }
 
 }
@@ -72,9 +70,9 @@ function addAqiData() {
 function renderAqiList() {
     var aqiTable = document.getElementById('aqi-table');
     var itemsHTML = '<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>';
-    for(var item in aqi){
+    for(var key in aqi){
         //console.log(aqi);
-        itemsHTML += '<tr><td>' + aqi[item].city +'</td><td>' + aqi[item].zhishu + '</td><td><button>删除</button></td></tr>';
+        itemsHTML += '<tr><td>' + key +'</td><td>' + aqi[key] + '</td><td><button>删除</button></td></tr>';
     }
     console.log(itemsHTML);
     aqiTable.innerHTML = itemsHTML;
