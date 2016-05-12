@@ -1,6 +1,3 @@
-/**
- * Created by chuli on 2016/3/26.
- */
 /* 数据格式演示
  var aqiSourceData = {
  "北京": {
@@ -11,6 +8,12 @@
  }
  };
  */
+var formgratime = document.getElementById("form-gra-time");
+console.log(formgratime);
+var cityselect = document.getElementById("city-select");
+var aqichartwrap = document.getElementsByClassName("aqi-chart-wrap")[0];
+
+
 
 // 以下两个函数用于随机模拟生成测试数据
 function getDateStr(dat) {
@@ -45,19 +48,43 @@ var aqiSourceData = {
     "沈阳": randomBuildData(500)
 };
 
+//console.log(aqiSourceData);
+
+
 // 用于渲染图表的数据
 var chartData = {};
+console.log(chartData);
+
 
 // 记录当前页面的表单选项
 var pageState = {
-    nowSelectCity: -1,
+    nowSelectCity: "北京",
     nowGraTime: "day"
 }
+
+
+
+// 设置图表随机颜色
+var colors =  [] ;
+for(var i = 0; i < 30 ; i++){
+    m =  '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+    colors.push(m);
+}
+//console.log(colors);
+
+
 
 /**
  * 渲染图表
  */
 function renderChart() {
+    var color = '',text = '';
+    for(var item in chartData){
+/*      console.log(colors);  //返回颜色数组*/
+        text += '<div title ="' + item + ":" +chartData[item] +'" style="height:' + chartData[item] +'px; backgroud-color:' + colors[Math.floor(Math.random() * 30)] + '"></div>' ;
+/*     console.log(item);  //返回天数、周数、月份*/
+    }
+    aqichartwrap.innerHTML = text;
 
 }
 
@@ -66,39 +93,73 @@ function renderChart() {
  */
 function graTimeChange() {
     // 确定是否选项发生了变化
-
+    if(pageState.nowGraTime == this.value){
+        return;
+    }else{
+        pageState.nowGraTime = this.value;
+    }
     // 设置对应数据
-
+    initAqiChartData();
     // 调用图表渲染函数
+    renderChart();
 }
+
 
 /**
  * select发生变化时的处理函数
  */
 function citySelectChange() {
     // 确定是否选项发生了变化
-
-    // 设置对应数据
-
-    // 调用图表渲染函数
+if(pageState.nowSelectCity == this.value){
+    return;
+}else{
+    pageState.nowSelectCity == this.value;
 }
+    // 设置对应数据
+    initAqiChartData();
+    // 调用图表渲染函数
+    renderChart();
+}
+
+
+//  浏览器事件监听绑定
+function addEventHandler(ele , event , hanlder ) {
+    if(ele.addEventListener){
+        ele.addEventListener(event, hanlder, false);
+    }else if (ele.attachEvent){
+        ele.attachEvent("on" + event, hanlder);
+    }else {
+        ele["on" +event] = hanlder;
+    }
+}
+
 
 /**
  * 初始化日、周、月的radio事件，当点击时，调用函数graTimeChange
  */
 function initGraTimeForm() {
+    var pageRadio = formgratime.getElementsByTagName('input');
+    for( var i = 0; i < pageRadio.length ; i++){
+        addEventHandler(pageRadio[i] ,'click',graTimeChange);
+    }
 
 }
+
 
 /**
  * 初始化城市Select下拉选择框中的选项
  */
 function initCitySelector() {
+    var cityList = '' ;
     // 读取aqiSourceData中的城市，然后设置id为city-select的下拉列表中的选项
-
+    for(var i in aqiSourceData){
+        cityList += '<option>' + i + '</option>';
+        cityList.innerHTML = cityList;
+    }
     // 给select设置事件，当选项发生变化时调用函数citySelectChange
-
+    addEventHandler(cityselect, 'change', citySelectChange)
 }
+
 
 
 
@@ -108,7 +169,53 @@ function initCitySelector() {
 function initAqiChartData() {
     // 将原始的源数据处理成图表需要的数据格式
     // 处理好的数据存到 chartData 中
+    var nowCityData = aqiSourceData[ pageState.nowSelectCity ];
+    // nowCityData 是一个确定的城市92天降水数组，key是日期，nowCityData【key】是降水量
+
+    if ( pageState.nowGraTime == 'day' ) {
+        chartData = nowCityData;
+    }
+    if ( pageState.nowGraTime == 'week' ) {
+        chartData = {};
+        var countSum = 0 , daySum = 0 , week = 0;
+        for ( var item in nowCityData ) {
+            countSum += nowCityData[ item ];
+            daySum++;
+            if ( (new Date(item)).getDay() == 6 ) {
+                week++;
+                chartData[ '第' + week + '周' ] = Math.floor(countSum / daySum);
+                countSum = 0;
+                daySum = 0;
+            }
+        }
+        if ( daySum != 0 ) {
+            week++;
+            chartData[ '第' + week + '周' ] = Math.floor(countSum / daySum);
+        }
+    }
+    if ( pageState.nowGraTime == 'month' ) {
+        chartData = {};
+        var countSum = 0;
+        daySum = 0;
+        month = 0;
+        for ( var item in nowCityData ) {
+            countSum += nowCityData[ item ];
+            daySum++;
+            if ( (new Date(item)).getMonth() !== month ) {
+                month++;
+                chartData[ '第' + month + '月' ] = Math.floor(countSum / daySum);
+                countSum = 0
+                daySum = 0;
+            }
+        }
+
+        if ( daySum != 0 ) {
+            month++;
+            chartData[ '第' + month + '月' ] = Math.floor(countSum / daySum);
+        }
+    }
 }
+
 
 
 
