@@ -3,6 +3,7 @@
  */
 (function () {
     //  右侧入添加函数
+    "use strict";
     var leftInto = document.getElementById('left-Into');
     var rightInto = document.getElementById('right-Into');
     var leftOut = document.getElementById('left-Out');
@@ -30,7 +31,6 @@
             this.removeChild(ev.target);
         }
     };
-
 
 
     leftInto.onclick  = function () {
@@ -86,45 +86,3 @@
 })();
 
 
-
-
-
-
-
-/*
-//左侧添加数字
-
-function leftIn(){
-    var inputText = document.getElementById("in123").value;
-    var newText = document.createTextNode(inputText);
-//    console.log(inputText);
-    var div = document.createElement('div');
-    div.id = "back";
-//    console.log(newText);
-    div.appendChild(newText);
-    qiang.appendChild(div);
-}
-function rightIn() {
-    var inputText = document.getElementById("in123").value;
-    console.log(inputText);
-    var div = document.createElement('div');
-    div.id = "back";
-    var newText = document.createTextNode(inputText);
-    console.log(newText);
-    div.appendChild(newText);
-    qiang.appendChild(div);
-
-}
-
-
-
-//左侧点击事件
- leftInto.onclick = function(){
-     leftIn();
- }
-
-
-// 右侧点击事件
-rightInto.onclick = function () {
-    rightIn();
-}*/
